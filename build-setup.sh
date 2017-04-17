@@ -139,6 +139,11 @@ ${PROXY}
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# Added by DHKWON, 2017/04/17
+RUN apt-get clean && apt-get update
+RUN apt-get install locales
+RUN locale-gen en_US.UTF-8
+
 # Set the locale
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
